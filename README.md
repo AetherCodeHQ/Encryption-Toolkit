@@ -1,108 +1,127 @@
-# Encryption Toolkit
+# 🛡️ Encryption Toolkit
 
-![CI](https://github.com/Qyroxen/Encryption-Toolkit/actions/workflows/ci.yml/badge.svg)
-![CodeQL](https://github.com/Qyroxen/Encryption-Toolkit/actions/workflows/codeql.yml/badge.svg)
-![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Stars](https://img.shields.io/github/stars/Qyroxen/Encryption-Toolkit?style=social)
-![Issues](https://img.shields.io/github/issues/Qyroxen/Encryption-Toolkit)
-![PRs](https://img.shields.io/github/issues-pr/Qyroxen/Encryption-Toolkit)
+![Go](https://img.shields.io/badge/Go-1.21%2B-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-00ADD8?style=for-the-badge)
+![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![CodeQL](https://img.shields.io/badge/CodeQL-Security-00ADD8?style=for-the-badge)
+![Lint](https://img.shields.io/badge/GolangCI--Lint-Passing-00ADD8?style=for-the-badge)
+![Dependabot](https://img.shields.io/badge/Dependabot-Enabled-025E9C?style=for-the-badge&logo=dependabot&logoColor=white)
 
-> A production-ready CLI tool built with Go
+> Encryption-Toolkit - Open source tool by Qyroxen
 
-[![Star Badge](https://img.shields.io/github/stars/Qyroxen/Encryption-Toolkit?style=social)](https://github.com/Qyroxen/Encryption-Toolkit/stargazers)
+`cli` `cryptography` `encryption` `golang` `security`
 
 ## What is it?
 
-Encryption Toolkit is a production-ready CLI tool built with Go. It provides powerful functionality with a beautiful terminal interface.
+**Encryption Toolkit** is a security tool designed for developers who need fast, reliable, and offline-capable tools. Built with Go for maximum performance and minimal resource usage.
 
-## Features
+## Why should you care?
 
-- Fast and efficient (written in Go)
-- Beautiful CLI with colored output
-- Comprehensive documentation
-- GitHub Actions CI/CD
-- CodeQL security analysis
-- Dependabot for dependency updates
-- MIT Licensed
-- Fully offline - zero cloud dependency
+- 🚀 **Fast** — Compiled Go binary, no runtime dependencies
+- 🔒 **Secure** — CodeQL security analysis + Dependabot
+- 🌐 **Offline-first** — Works without internet connection
+- 📦 **Lightweight** — Single binary, minimal footprint
+- 🛠️ **Developer-friendly** — Clean CLI with helpful documentation
 
 ## Quick Start
 
+### Prerequisites
+- Go 1.21 or higher
+
+### Install from source
 ```bash
-# Install
 git clone https://github.com/Qyroxen/Encryption-Toolkit.git
 cd Encryption-Toolkit
-go build -o encryptiontoolkit .
-
-# Run
-./encryptiontoolkit --help
+go build -o Encryption-Toolkit .
 ```
 
-## CLI Usage
+### Run
+```bash
+./Encryption-Toolkit --help
+```
+
+## Usage
 
 ```bash
 # Basic usage
-./encryptiontoolkit
+./Encryption-Toolkit --path ./target
 
-# With flags
-./encryptiontoolkit --verbose --output json
+# With options
+./Encryption-Toolkit --path ./target --format json --output report.json
 
-# Get help
-./encryptiontoolkit --help
+# Verbose mode
+./Encryption-Toolkit --path ./target --verbose
 ```
+
+## Features
+
+- ✅ High-performance Go implementation
+- ✅ Cross-platform support (Windows, Linux, macOS)
+- ✅ JSON export for CI/CD integration
+- ✅ Colored terminal output
+- ✅ Configurable via YAML/JSON
+- ✅ Comprehensive documentation
+
+## CLI Flags
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--path` | Target directory | `.` |
+| `--format` | Output format (json, text, badge) | `text` |
+| `--output` | Output filename | `stdout` |
+| `--verbose` | Enable verbose output | `false` |
+| `--config` | Config file path | - |
 
 ## Examples
 
+### Basic scan
 ```bash
-# Example 1
-./encryptiontoolkit example1
+./Encryption-Toolkit --path ./my-project
+```
 
-# Example 2
-./encryptiontoolkit example2 --flag value
+### JSON report
+```bash
+./Encryption-Toolkit --path ./my-project --format json --output report.json
+```
+
+### CI/CD integration
+```yaml
+# .github/workflows/scan.yml
+- name: Run Encryption Toolkit
+  run: ./Encryption-Toolkit --path . --format json --output report.json
 ```
 
 ## Development
 
 ```bash
+# Clone the repo
+git clone https://github.com/Qyroxen/Encryption-Toolkit.git
+cd Encryption-Toolkit
+
+# Build
+go build -o Encryption-Toolkit .
+
 # Run tests
 go test ./...
 
-# Build
-go build -o encryptiontoolkit .
-
 # Lint
 golangci-lint run
-
-# Security scan
-codeql analyze
 ```
 
 ## Contributing
 
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## Security
 
-For security vulnerabilities, please see [SECURITY.md](SECURITY.md).
+If you discover a security vulnerability, please report it responsibly. See [SECURITY.md](SECURITY.md) for details.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
 
 <p align="center">
-  <a href="https://github.com/Qyroxen/Encryption-Toolkit/stargazers">
-    <img src="https://img.shields.io/github/stars/Qyroxen/Encryption-Toolkit?style=social" alt="Star this repo">
-  </a>
-  <a href="https://github.com/Qyroxen/Encryption-Toolkit/forks">
-    <img src="https://img.shields.io/github/forks/Qyroxen/Encryption-Toolkit?style=social" alt="Fork this repo">
-  </a>
-  <a href="https://github.com/Qyroxen/Encryption-Toolkit/issues">
-    <img src="https://img.shields.io/github/issues/Qyroxen/Encryption-Toolkit" alt="Issues">
-  </a>
-  <a href="https://github.com/Qyroxen/Encryption-Toolkit/pulls">
-    <img src="https://img.shields.io/github/issues-pr/Qyroxen/Encryption-Toolkit" alt="Pull Requests">
-  </a>
+  Built with ❤️ by <a href="https://github.com/Qyroxen">AetherCode</a> • <a href="https://github.com/AetherCode-Core">AetherCode-Core</a>
 </p>
