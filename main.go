@@ -1,26 +1,28 @@
+
 package main
 
 import (
+	"crypto/sha256"
+	"crypto/sha512"
+	"encoding/hex"
 	"fmt"
+	"io/ioutil"
 	"os"
 )
 
-// encryption_toolkit - Encryption utilities
-func encryption_toolkit(path string) {
-	fmt.Println("========================================")
-	fmt.Println("  Encryption-Toolkit")
-	fmt.Println("  Encryption utilities")
-	fmt.Println("========================================")
-	fmt.Println()
-	fmt.Println("Target:", path)
-	fmt.Println("Processing...")
-	fmt.Println("Done!")
-}
-
 func main() {
-	path := "."
-	if len(os.Args) > 1 {
-		path = os.Args[1]
+	if len(os.Args) < 2 {
+		fmt.Println("usage: Encryption-Toolkit <file> [file...]")
+		os.Exit(1)
 	}
-	encryption_toolkit(path)
+	for _, p := range os.Args[1:] {
+		b, err := ioutil.ReadFile(p)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "read %s: %v\n", p, err)
+			os.Exit(1)
+		}
+		s256 := sha256.Sum256(b)
+		s512 := sha512.Sum512(b)
+		fmt.Printf("%s  sha256=%s  sha512=%s\n", p, hex.EncodeToString(s256[:]), hex.EncodeToString(s512[:]))
+	}
 }
