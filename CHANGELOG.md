@@ -1,5 +1,9 @@
 # Changelog
 
+## [v3.0.0] - 2026-08-24
+
+Replaced generic stub with a purpose-built implementation unique to this tool.
+
 ## [v2.2.0] - 2026-08-24
 
 Replaced generic stub with a purpose-built implementation unique to this tool.
